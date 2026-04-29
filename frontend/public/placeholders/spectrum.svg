@@ -1,0 +1,11 @@
+<svg width="720" height="420" viewBox="0 0 720 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="420" fill="#F8FBFF"/>
+  <path d="M72 64V344H664" stroke="#94A3B8" stroke-width="2"/>
+  <path d="M72 288H664M72 232H664M72 176H664M72 120H664" stroke="#DBEAFE" stroke-width="2"/>
+  <path d="M108 306L132 294L156 310L180 252L204 282L228 196L252 264L276 224L300 294L324 112L348 280L372 250L396 304L420 176L444 286L468 238L492 300L516 128L540 276L564 252L588 308L612 214L636 292" stroke="#2563EB" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M324 112V344" stroke="#EF4444" stroke-width="2" stroke-dasharray="8 8"/>
+  <path d="M516 128V344" stroke="#F59E0B" stroke-width="2" stroke-dasharray="8 8"/>
+  <rect x="86" y="42" width="204" height="42" rx="6" fill="#EFF6FF" stroke="#BFDBFE"/>
+  <text x="106" y="69" fill="#0F172A" font-family="Arial, sans-serif" font-size="18" font-weight="700">Spectrum Trace</text>
+</svg>
+

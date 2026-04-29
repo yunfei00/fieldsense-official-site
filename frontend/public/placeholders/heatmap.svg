@@ -1,0 +1,20 @@
+<svg width="720" height="420" viewBox="0 0 720 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="420" fill="#EFF6FF"/>
+  <path d="M0 60H720M0 120H720M0 180H720M0 240H720M0 300H720M0 360H720M60 0V420M120 0V420M180 0V420M240 0V420M300 0V420M360 0V420M420 0V420M480 0V420M540 0V420M600 0V420M660 0V420" stroke="#BFDBFE" stroke-width="1"/>
+  <g filter="url(#blur)">
+    <circle cx="214" cy="146" r="92" fill="#EF4444" fill-opacity="0.9"/>
+    <circle cx="394" cy="238" r="118" fill="#F59E0B" fill-opacity="0.82"/>
+    <circle cx="538" cy="132" r="104" fill="#2563EB" fill-opacity="0.78"/>
+    <circle cx="165" cy="310" r="72" fill="#22C55E" fill-opacity="0.55"/>
+  </g>
+  <rect x="98" y="92" width="484" height="236" rx="8" stroke="white" stroke-opacity="0.9" stroke-width="3" stroke-dasharray="10 10"/>
+  <circle cx="394" cy="238" r="13" fill="#DC2626" stroke="white" stroke-width="8"/>
+  <rect x="58" y="36" width="182" height="42" rx="6" fill="white" fill-opacity="0.86"/>
+  <text x="78" y="63" fill="#0F172A" font-family="Arial, sans-serif" font-size="18" font-weight="700">EM Heatmap</text>
+  <defs>
+    <filter id="blur" x="-80" y="-80" width="880" height="580" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="36"/>
+    </filter>
+  </defs>
+</svg>
+

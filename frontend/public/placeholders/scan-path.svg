@@ -1,0 +1,10 @@
+<svg width="720" height="420" viewBox="0 0 720 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="720" height="420" fill="#EFF6FF"/>
+  <path d="M0 40H720M0 80H720M0 120H720M0 160H720M0 200H720M0 240H720M0 280H720M0 320H720M0 360H720M0 400H720M40 0V420M80 0V420M120 0V420M160 0V420M200 0V420M240 0V420M280 0V420M320 0V420M360 0V420M400 0V420M440 0V420M480 0V420M520 0V420M560 0V420M600 0V420M640 0V420M680 0V420" stroke="#BFDBFE"/>
+  <rect x="116" y="84" width="488" height="252" rx="10" fill="white" fill-opacity="0.5" stroke="#2563EB" stroke-width="3"/>
+  <path d="M154 126H556V164H154V202H556V240H154V278H556" stroke="#2563EB" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="556" cy="278" r="16" fill="#EF4444" stroke="white" stroke-width="7"/>
+  <rect x="78" y="36" width="174" height="42" rx="6" fill="white" fill-opacity="0.9"/>
+  <text x="98" y="63" fill="#0F172A" font-family="Arial, sans-serif" font-size="18" font-weight="700">Scan Path</text>
+</svg>
+
