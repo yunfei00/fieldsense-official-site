@@ -29,9 +29,9 @@ export function Header() {
 
   return (
     <header className={cn("sticky top-0 z-50 border-b border-line bg-white/92 backdrop-blur transition", scrolled && "shadow-md")}>
-      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 md:px-8">
+      <div className="mx-auto flex h-[68px] max-w-7xl items-center justify-between px-4 md:h-[72px] md:px-8">
         <Link className="flex items-center gap-3" href="/" onClick={() => setOpen(false)}>
-          <span className="flex h-10 w-10 items-center justify-center rounded-md bg-brand-600 text-base font-bold text-white">
+            <span className="flex h-9 w-9 items-center justify-center rounded-md bg-brand-600 text-sm font-bold text-white md:h-10 md:w-10 md:text-base">
             FS
           </span>
           <span>
