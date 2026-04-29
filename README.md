@@ -96,6 +96,12 @@ python manage.py createsuperuser
 
 ## Docker 启动
 
+生产或服务器部署时，先在 `deploy` 目录从模板生成环境文件并修改（至少配置 `DJANGO_ALLOWED_HOSTS` 等）：
+
+```bash
+cp deploy/.env.example deploy/.env
+```
+
 ```bash
 cd deploy
 docker compose up -d --build

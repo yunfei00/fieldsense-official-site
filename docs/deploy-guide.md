@@ -30,13 +30,15 @@ python manage.py runserver
 NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
 ```
 
-后端：
+后端本地开发可在 `backend` 目录自行设置环境变量；**生产 Docker 部署**时，后端相关变量统一放在 `deploy/.env`（不要提交到 Git），模板见 `deploy/.env.example`。
+
+服务器部署时先复制模板并编辑（至少修改 `DJANGO_ALLOWED_HOSTS` 等为实际域名或 IP）：
 
 ```bash
-DJANGO_DEBUG=true
-DJANGO_SECRET_KEY=change-me
-DJANGO_ALLOWED_HOSTS=localhost,127.0.0.1
+cp deploy/.env.example deploy/.env
 ```
+
+然后按需编辑 `deploy/.env` 中的 `DJANGO_SECRET_KEY`、`DJANGO_DEBUG`、`DJANGO_ALLOWED_HOSTS`、`DJANGO_CORS_ALLOWED_ORIGINS`、`DJANGO_CSRF_TRUSTED_ORIGINS` 等。
 
 ## Docker 启动
 

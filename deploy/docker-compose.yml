@@ -4,9 +4,9 @@ services:
       context: ..
       dockerfile: deploy/Dockerfile.backend
     container_name: fieldsense-backend
+    env_file:
+      - ./.env
     environment:
-      DJANGO_DEBUG: "true"
-      DJANGO_ALLOWED_HOSTS: "localhost,127.0.0.1,backend"
       SQLITE_PATH: "/data/db.sqlite3"
     volumes:
       - fieldsense_sqlite:/data
