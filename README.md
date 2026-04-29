@@ -101,6 +101,14 @@ cd deploy
 docker compose up -d --build
 ```
 
+如果构建阶段依赖下载失败（例如网络抖动），可先清理后重建：
+
+```bash
+docker compose down
+docker builder prune -f
+docker compose up -d --build
+```
+
 默认服务：
 
 - 前端：http://localhost:3000

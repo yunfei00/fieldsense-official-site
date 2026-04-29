@@ -16,8 +16,8 @@ export function CoreCapabilities() {
           {coreCapabilities.map((item) => {
             const Icon = iconMap[item.icon];
             return (
-              <Card className="p-6" key={item.title}>
-                <div className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-50 text-brand-600">
+              <Card className="border-brand-100 p-6" key={item.title}>
+                <div className="flex h-14 w-14 items-center justify-center rounded-lg border border-brand-200 bg-brand-50 text-brand-600 shadow-sm">
                   <Icon size={26} strokeWidth={1.8} />
                 </div>
                 <h3 className="mt-5 text-xl font-bold tracking-normal text-ink-900">{item.title}</h3>

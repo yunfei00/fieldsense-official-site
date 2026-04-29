@@ -21,19 +21,23 @@ export function CTASection({
 }) {
   return (
     <section className={cn("bg-white px-4 py-16 md:px-8", className)}>
-      <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-8 rounded-card border border-brand-100 bg-brand-50 p-8 shadow-soft md:flex-row md:items-center md:p-10">
-        <div className="max-w-2xl">
-          <h2 className="text-2xl font-bold tracking-normal text-ink-900 md:text-3xl">{title}</h2>
-          <p className="mt-4 text-base leading-8 text-ink-600">{description}</p>
-        </div>
-        <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
-          <Button className="w-full sm:w-auto" href={primaryHref}>
-            {primaryLabel}
-            <ArrowRight size={18} />
-          </Button>
-          <Button className="w-full sm:w-auto" href={secondaryHref} variant="outline">
-            {secondaryLabel}
-          </Button>
+      <div className="cta-shell relative mx-auto max-w-6xl overflow-hidden rounded-card border border-brand-500/40 bg-gradient-to-r from-brand-900 via-brand-700 to-brand-600 p-8 shadow-soft md:p-10">
+        <div className="absolute -right-12 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-white/10 blur-2xl" />
+        <div className="heatmap-surface absolute -right-6 bottom-0 h-40 w-72 rounded-tl-3xl opacity-60" />
+        <div className="relative flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
+          <div className="max-w-2xl">
+            <h2 className="text-2xl font-bold tracking-normal text-white md:text-3xl">{title}</h2>
+            <p className="mt-4 text-base leading-8 text-blue-100">{description}</p>
+          </div>
+          <div className="flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
+            <Button className="w-full bg-white text-brand-700 hover:bg-blue-50 sm:w-auto" href={primaryHref}>
+              {primaryLabel}
+              <ArrowRight size={18} />
+            </Button>
+            <Button className="w-full border-white/40 bg-white/10 text-white hover:bg-white/20 sm:w-auto" href={secondaryHref} variant="outline">
+              {secondaryLabel}
+            </Button>
+          </div>
         </div>
       </div>
     </section>

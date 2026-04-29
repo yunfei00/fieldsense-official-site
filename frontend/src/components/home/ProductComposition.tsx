@@ -19,6 +19,12 @@ export function ProductComposition() {
             return (
               <div className="relative" key={item.title}>
                 <Card className="h-full p-6">
+                  <div className="mb-4 h-20 rounded-md border border-brand-100 bg-gradient-to-br from-brand-50 to-white p-3">
+                    <div className="flex h-full items-center justify-between gap-2">
+                      <div className="h-8 w-10 rounded border border-brand-200 bg-white" />
+                      <div className="h-5 w-14 rounded-full bg-brand-200/70" />
+                    </div>
+                  </div>
                   <div className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-50 text-brand-600">
                     <Icon size={26} strokeWidth={1.8} />
                   </div>

@@ -45,6 +45,8 @@ export type Solution = {
   title: string;
   summary: string;
   target: string;
+  applicable: string[];
+  outputs: string[];
   painPoints: string[];
   icon: IconName;
 };

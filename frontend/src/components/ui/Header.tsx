@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { siteConfig } from "@/data/site";
 import { cn } from "@/lib/utils";
@@ -11,6 +11,14 @@ import { cn } from "@/lib/utils";
 export function Header() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   const isActive = (href: string) => {
     if (href === "/") {
@@ -20,7 +28,7 @@ export function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-50 border-b border-line bg-white/92 backdrop-blur">
+    <header className={cn("sticky top-0 z-50 border-b border-line bg-white/92 backdrop-blur transition", scrolled && "shadow-md")}>
       <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-4 md:px-8">
         <Link className="flex items-center gap-3" href="/" onClick={() => setOpen(false)}>
           <span className="flex h-10 w-10 items-center justify-center rounded-md bg-brand-600 text-base font-bold text-white">

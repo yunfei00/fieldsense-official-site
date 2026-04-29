@@ -6,6 +6,8 @@ export const solutions: Solution[] = [
     title: "PCB 板级干扰排查方案",
     summary: "通过近场扫描与云图分析定位 PCB 热点区域，辅助布局优化、器件筛查与整改验证。",
     target: "硬件研发、EMC 整改工程师、实验室测试团队",
+    applicable: ["硬件研发", "EMC预整改", "PCB调试"],
+    outputs: ["热点云图", "频点数据", "整改建议"],
     icon: "cpu",
     painPoints: ["辐射源难定位", "整改方向不清晰", "缺少前后对比依据"]
   },
@@ -14,6 +16,8 @@ export const solutions: Solution[] = [
     title: "射频模块近场分析方案",
     summary: "观察模块周边电磁分布，分析屏蔽、接地、走线和器件布局对射频表现的影响。",
     target: "射频工程师、模块研发团队",
+    applicable: ["射频工程师", "模块研发", "性能调优团队"],
+    outputs: ["热点云图", "屏蔽评估结论", "优化建议"],
     icon: "radio",
     painPoints: ["模块热点异常", "屏蔽效果难评估", "频点分布不直观"]
   },
@@ -22,6 +26,8 @@ export const solutions: Solution[] = [
     title: "EMC 整改与验证方案",
     summary: "建立整改前后云图对比与频谱记录，帮助团队快速判断整改是否有效。",
     target: "EMC 工程师、认证测试团队",
+    applicable: ["EMC工程师", "认证测试", "整改验证团队"],
+    outputs: ["整改前后对比图", "关键频点记录", "验证报告"],
     icon: "shield",
     painPoints: ["整改周期长", "验证成本高", "报告难沉淀"]
   },
@@ -30,6 +36,8 @@ export const solutions: Solution[] = [
     title: "天线与电磁分布评估方案",
     summary: "对天线、馈线和周边结构进行近场扫描，辅助评估能量分布与耦合风险。",
     target: "天线工程师、无线产品团队",
+    applicable: ["天线工程师", "无线团队", "结构设计团队"],
+    outputs: ["场分布图", "耦合风险清单", "优化建议"],
     icon: "antenna",
     painPoints: ["耦合路径复杂", "结构影响难判断", "空间分布缺少可视化"]
   },
@@ -38,6 +46,8 @@ export const solutions: Solution[] = [
     title: "实验室研发测试方案",
     summary: "为研发实验室构建可复现、可沉淀、可扩展的近场扫描测试流程。",
     target: "研发实验室、测试平台团队",
+    applicable: ["实验室负责人", "研发测试团队", "自动化平台工程师"],
+    outputs: ["测试流程模板", "标准化报告", "系统配置建议"],
     icon: "flask",
     painPoints: ["设备分散", "流程不统一", "数据难复用"]
   }

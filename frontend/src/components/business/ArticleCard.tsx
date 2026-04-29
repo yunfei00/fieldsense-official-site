@@ -5,11 +5,18 @@ import { Card } from "@/components/ui/Card";
 import type { Article } from "@/types/content";
 
 export function ArticleCard({ article }: { article: Article }) {
+  const badgeTone =
+    article.category === "EMC整改"
+      ? "bg-amber-50 border-amber-200 text-amber-700"
+      : article.category === "PCB干扰分析"
+        ? "bg-rose-50 border-rose-200 text-rose-700"
+        : "bg-brand-50 border-brand-100 text-brand-700";
+
   return (
     <Card className="h-full p-6">
-      <Badge>{article.category}</Badge>
+      <Badge className={badgeTone}>{article.category}</Badge>
       <h3 className="mt-4 text-xl font-bold tracking-normal text-ink-900">{article.title}</h3>
-      <p className="mt-3 text-sm leading-7 text-ink-600">{article.excerpt}</p>
+      <p className="mt-3 line-clamp-3 text-sm leading-7 text-ink-600">{article.excerpt}</p>
       <div className="mt-5 flex flex-wrap gap-4 text-xs font-semibold text-ink-500">
         <span className="inline-flex items-center gap-1.5">
           <CalendarDays size={14} />

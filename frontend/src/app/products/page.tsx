@@ -13,13 +13,21 @@ export default function ProductsPage() {
   return (
     <>
       <section className="bg-brand-50 px-4 py-16 md:px-8">
-        <div className="mx-auto max-w-7xl">
+        <div className="mx-auto grid max-w-7xl items-center gap-8 lg:grid-cols-[1fr_0.8fr]">
           <SectionTitle
             align="left"
             description="从自动化扫描平台到分析软件，FieldSense 为实验室和研发团队提供完整的近场扫描产品组合。"
             eyebrow="产品中心"
             title="近场扫描系统、探头、采集适配与分析软件"
           />
+          <div className="relative hidden h-48 overflow-hidden rounded-card border border-brand-100 bg-gradient-to-br from-white via-brand-50 to-brand-100 p-4 lg:block">
+            <div className="scanner-grid absolute inset-0 opacity-45" />
+            <div className="relative grid h-full grid-cols-3 gap-3">
+              <div className="rounded-md border border-brand-200 bg-white/90" />
+              <div className="heatmap-surface rounded-md border border-brand-200/70" />
+              <div className="spectrum-bars rounded-md border border-brand-200" />
+            </div>
+          </div>
         </div>
       </section>
       <section className="bg-white px-4 py-16 md:px-8">

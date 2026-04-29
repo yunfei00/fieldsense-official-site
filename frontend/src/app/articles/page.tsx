@@ -30,10 +30,27 @@ export default function ArticlesPage() {
         </div>
       </section>
       <section className="bg-white px-4 py-16 md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {articles.map((article) => (
-            <ArticleCard article={article} key={article.slug} />
-          ))}
+        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-[1fr_300px]">
+          <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            {articles.map((article) => (
+              <ArticleCard article={article} key={article.slug} />
+            ))}
+          </div>
+          <aside className="h-fit rounded-card border border-brand-100 bg-brand-50/60 p-5">
+            <h3 className="text-lg font-bold text-ink-900">推荐阅读 / 热门关键词</h3>
+            <div className="mt-4 flex flex-wrap gap-2">
+              {articleCategories.slice(0, 6).map((keyword) => (
+                <Badge key={keyword}>{keyword}</Badge>
+              ))}
+            </div>
+            <ul className="mt-5 grid gap-3 text-sm text-ink-700">
+              {articles.slice(0, 4).map((article) => (
+                <li className="rounded-md bg-white px-3 py-2" key={article.slug}>
+                  {article.title}
+                </li>
+              ))}
+            </ul>
+          </aside>
         </div>
         <Pagination />
       </section>

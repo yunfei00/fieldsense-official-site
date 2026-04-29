@@ -21,6 +21,7 @@ export function Footer() {
             <br />
             {siteConfig.description}
           </p>
+          <p className="mt-3 text-sm font-semibold text-blue-100">专注近场扫描、频谱采集与电磁云图分析。</p>
         </div>
         <div>
           <h3 className="text-sm font-semibold text-white">站点导航</h3>

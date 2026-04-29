@@ -3,7 +3,7 @@ import { SectionTitle } from "@/components/ui/SectionTitle";
 
 export function WhyChoose() {
   return (
-    <section className="bg-slate-50 px-4 py-16 md:px-8">
+    <section className="bg-gradient-to-br from-brand-50 via-blue-50 to-brand-100/80 px-4 py-16 md:px-8">
       <div className="mx-auto max-w-7xl">
         <SectionTitle
           description="围绕研发测试团队最关心的效率、结果表达、硬件兼容和流程沉淀进行设计。"

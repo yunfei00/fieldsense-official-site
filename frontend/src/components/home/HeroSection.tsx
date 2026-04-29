@@ -46,6 +46,12 @@ function ProductVisual() {
   return (
     <div className="relative mx-auto w-full max-w-2xl">
       <div className="relative rounded-card border border-brand-100 bg-white p-5 shadow-card">
+        <div className="mb-4 grid gap-4 md:grid-cols-[1fr_1fr]">
+          <DeviceCard title="扫描平台" subtitle="龙门平台 + XY 运动控制" />
+          <DeviceCard title="探头 / 探针" subtitle="H场/E场近场探头阵列" />
+          <DeviceCard title="PCB 被测板" subtitle="板级热点区域扫描" />
+          <DeviceCard title="频谱 / 采集设备" subtitle="频点同步采样与记录" />
+        </div>
         <div className="grid gap-4 md:grid-cols-[1.1fr_0.9fr]">
           <div className="rounded-card border border-line bg-slate-50 p-4">
             <div className="mb-3 flex items-center justify-between">
@@ -94,13 +100,18 @@ function ProductVisual() {
                 ))}
               </div>
             </div>
+            <div className="rounded-card border border-line bg-white p-4 shadow-sm">
+              <div className="mb-3 text-sm font-bold text-ink-900">云图分析</div>
+              <div className="heatmap-surface relative h-28 rounded-md border border-brand-100">
+                <div className="absolute inset-0 scanner-grid opacity-40" />
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="mt-4 grid gap-4 md:grid-cols-3">
-          <DeviceCard title="扫描平台" subtitle="XY 自动控制" />
-          <DeviceCard title="频谱仪" subtitle="频点同步采集" />
-          <DeviceCard title="分析软件" subtitle="云图与报告" />
+        <div className="mt-4 grid gap-4 md:grid-cols-2">
+          <DeviceCard title="笔记本软件界面" subtitle="任务编排 + 实时曲线 + 报告输出" />
+          <DeviceCard title="硬件 + 软件 + 分析闭环" subtitle="设备联动、路径复现、热点定位" />
         </div>
       </div>
     </div>
@@ -119,7 +130,7 @@ function Metric({ label, value }: { label: string; value: string }) {
 function DeviceCard({ title, subtitle }: { title: string; subtitle: string }) {
   return (
     <div className="rounded-md border border-line bg-slate-50 p-3">
-      <div className="h-8 rounded border border-slate-200 bg-white" />
+      <div className="scanner-grid h-8 rounded border border-slate-200 bg-white" />
       <div className="mt-3 text-sm font-bold text-ink-900">{title}</div>
       <div className="mt-1 text-xs text-ink-500">{subtitle}</div>
     </div>

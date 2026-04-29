@@ -8,7 +8,7 @@ export function SolutionCard({ solution }: { solution: Solution }) {
   const Icon = iconMap[solution.icon];
 
   return (
-    <Card className="h-full p-6 transition hover:-translate-y-1 hover:border-brand-200 hover:shadow-soft">
+    <Card className="h-full p-6">
       <div className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-50 text-brand-600">
         <Icon size={26} strokeWidth={1.8} />
       </div>
@@ -20,6 +20,16 @@ export function SolutionCard({ solution }: { solution: Solution }) {
             {point}
           </span>
         ))}
+      </div>
+      <div className="mt-5 rounded-md border border-brand-100 bg-brand-50/60 p-3 text-sm text-ink-700">
+        <div>
+          <span className="font-semibold text-ink-900">适用对象：</span>
+          {solution.applicable.join("、")}
+        </div>
+        <div className="mt-2">
+          <span className="font-semibold text-ink-900">输出结果：</span>
+          {solution.outputs.join("、")}
+        </div>
       </div>
       <Link
         className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-brand-700 hover:text-brand-900"
