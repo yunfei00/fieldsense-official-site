@@ -108,3 +108,12 @@ CSRF_TRUSTED_ORIGINS = [
     if origin.strip()
 ]
 
+LEAD_NOTIFY_CHANNELS = [
+    item.strip()
+    for item in os.getenv("LEAD_NOTIFY_CHANNELS", "console").split(",")
+    if item.strip()
+]
+FEISHU_WEBHOOK_URL = os.getenv("FEISHU_WEBHOOK_URL", "")
+FEISHU_KEYWORD = os.getenv("FEISHU_KEYWORD", "FieldSense")
+FEISHU_TIMEOUT_SECONDS = int(os.getenv("FEISHU_TIMEOUT_SECONDS", "5"))
+

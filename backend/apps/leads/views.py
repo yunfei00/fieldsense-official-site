@@ -5,7 +5,7 @@ from django.db.models import Count
 
 from .models import Lead
 from .serializers import LeadCreateSerializer
-from .services import notify_new_lead
+from apps.notifications.services import notify_new_lead
 
 
 def create_lead(request, lead_type: str):

@@ -105,3 +105,32 @@ Nginx 会将 `/api/` 和 `/admin/` 转发到后端，其余请求转发到前端
 
 - 不要直接暴露后端 `8000` 端口（`ports`），建议仅保留 `expose: 8000`，并通过 Nginx 访问 `/admin/` 与 `/api/`。
 
+## 飞书新线索通知配置
+
+1. 在飞书群中添加自定义机器人并复制 Webhook 地址。
+2. 在 `deploy/.env` 增加或修改如下配置：
+
+```bash
+LEAD_NOTIFY_CHANNELS=feishu,console
+FEISHU_WEBHOOK_URL=https://open.feishu.cn/open-apis/bot/v2/hook/xxxx
+FEISHU_KEYWORD=FieldSense
+FEISHU_TIMEOUT_SECONDS=5
+```
+
+3. 重启后端服务并刷新 Nginx：
+
+```bash
+cd deploy
+docker compose up -d --build backend
+docker compose restart nginx
+```
+
+4. 查看后端日志：
+
+```bash
+cd deploy
+docker compose logs -f backend
+```
+
+5. 验收：提交联系表单或预约演示表单后，飞书群可收到新线索通知。
+
