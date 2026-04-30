@@ -83,9 +83,9 @@ docker compose up -d --build
 
 默认访问：
 
-- 前端：http://localhost:3000
-- 后端 Admin：http://localhost:8000/admin
-- API：http://localhost:8000/api/leads/demo-request/
+- 前端（调试直连，仅在暴露 3000 时）：http://localhost:3000
+- 后端 Admin（调试直连，仅在暴露 8000 时）：http://localhost:8000/admin
+- API（调试直连，仅在暴露 8000 时）：http://localhost:8000/api/leads/demo-request/
 - 生产 Admin 示例：http://flycloudjia.xyz/admin/
 
 查看线索路径：
@@ -104,6 +104,7 @@ Nginx 会将 `/api/` 和 `/admin/` 转发到后端，其余请求转发到前端
 生产环境建议：
 
 - 不要直接暴露后端 `8000` 端口（`ports`），建议仅保留 `expose: 8000`，并通过 Nginx 访问 `/admin/` 与 `/api/`。
+- 前端 `3000` 端口也建议仅保留 `expose: 3000`，外部统一通过 Nginx 的 `/` 访问。
 
 ## 飞书新线索通知配置
 
@@ -133,4 +134,30 @@ docker compose logs -f backend
 ```
 
 5. 验收：提交联系表单或预约演示表单后，飞书群可收到新线索通知。
+
+## SQLite 备份脚本
+
+项目提供 SQLite 备份脚本：`deploy/backup_sqlite.sh`
+
+- 备份源：`deploy/data/backend/db.sqlite3`
+- 备份目录：`deploy/backups/`
+- 文件名格式：`db-YYYYmmdd-HHMMSS.sqlite3`
+- 自动保留最近 20 个备份，自动删除更旧备份
+
+使用方式：
+
+```bash
+cd deploy
+sh backup_sqlite.sh
+```
+
+## 上线验收命令
+
+```bash
+docker compose ps
+curl -I http://127.0.0.1
+curl -I http://flycloudjia.xyz
+curl -i -X POST http://flycloudjia.xyz/api/leads/contact/ -H "Content-Type: application/json" -d '{"name":"测试","company":"测试公司","phone":"13800000000","application_scene":"PCB干扰排查","message":"上线验收测试"}'
+docker compose exec backend python manage.py shell -c "from apps.leads.models import Lead; print(Lead.objects.count())"
+```
 
