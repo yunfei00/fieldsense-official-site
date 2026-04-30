@@ -34,3 +34,38 @@ class LeadCreateSerializer(serializers.ModelSerializer):
                 raise serializers.ValidationError({field: "该字段为必填项。"})
         return attrs
 
+
+class LeadAdminSerializer(serializers.ModelSerializer):
+    lead_type_display = serializers.CharField(source="get_lead_type_display", read_only=True)
+    status_display = serializers.CharField(source="get_status_display", read_only=True)
+
+    class Meta:
+        model = Lead
+        fields = (
+            "id",
+            "created_at",
+            "lead_type",
+            "lead_type_display",
+            "name",
+            "company",
+            "department",
+            "phone",
+            "email",
+            "product_interest",
+            "application_scene",
+            "purchase_time",
+            "message",
+            "source_page",
+            "source_url",
+            "status",
+            "status_display",
+            "remark",
+            "updated_at",
+        )
+
+
+class LeadAdminUpdateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Lead
+        fields = ("status", "remark")
+

@@ -135,6 +135,38 @@ docker compose logs -f backend
 
 5. 验收：提交联系表单或预约演示表单后，飞书群可收到新线索通知。
 
+## 线索管理页面
+
+页面地址：
+
+- http://flycloudjia.xyz/dashboard/leads
+
+在 `deploy/.env` 配置管理密码：
+
+```bash
+LEADS_DASHBOARD_PASSWORD=your-secure-password
+```
+
+更新配置后重启：
+
+```bash
+cd deploy
+docker compose up -d --build backend frontend
+docker compose restart nginx
+```
+
+页面功能：
+
+- 查看线索统计
+- 搜索与筛选线索
+- 修改线索状态
+- 添加内部备注
+- 导出 CSV
+
+注意：
+
+- 第一版使用简单密码保护，不是完整用户登录系统，后续可升级为正式鉴权方案。
+
 ## SQLite 备份脚本
 
 项目提供 SQLite 备份脚本：`deploy/backup_sqlite.sh`
