@@ -4,6 +4,13 @@ import { coreCapabilities } from "@/data/home";
 import { iconMap } from "@/lib/icons";
 
 export function CoreCapabilities() {
+  const capabilityTags: Record<string, string> = {
+    自动扫描: "路径规划",
+    数据采集: "频谱采集",
+    云图生成: "多频点分析",
+    干扰分析: "报告输出"
+  };
+
   return (
     <section className="bg-white px-4 py-16 md:px-8">
       <div className="mx-auto max-w-7xl">
@@ -22,6 +29,9 @@ export function CoreCapabilities() {
                 </div>
                 <h3 className="mt-5 text-xl font-bold tracking-normal text-ink-900">{item.title}</h3>
                 <p className="mt-3 text-sm leading-7 text-ink-600">{item.description}</p>
+                <span className="mt-4 inline-flex rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                  {capabilityTags[item.title] || "能力增强"}
+                </span>
               </Card>
             );
           })}

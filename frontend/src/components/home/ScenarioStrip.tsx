@@ -2,7 +2,7 @@ import { scenarioStrip } from "@/data/home";
 
 export function ScenarioStrip() {
   return (
-    <section className="border-y border-line bg-white px-4 py-5 md:px-8">
+    <section className="border-y border-line bg-slate-50/70 px-4 py-5 md:px-8">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-center gap-3 text-sm font-semibold text-ink-600">
         <span className="text-brand-700">适用于</span>
         {scenarioStrip.map((item, index) => (

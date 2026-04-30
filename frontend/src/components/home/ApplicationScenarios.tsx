@@ -13,7 +13,7 @@ export function ApplicationScenarios() {
           title="面向研发现场的电磁分析能力"
         />
         <div className="mt-10 grid gap-6 lg:grid-cols-3">
-          {applicationScenarios.map((item) => {
+          {applicationScenarios.map((item, index) => {
             const Icon = iconMap[item.icon];
             return (
               <Card className="overflow-hidden p-0" key={item.title}>
@@ -21,9 +21,11 @@ export function ApplicationScenarios() {
                   <div className="scanner-grid absolute inset-0 opacity-40" />
                   <div className="relative flex items-center justify-between">
                     <div className="h-12 w-20 rounded-md border border-brand-200 bg-white/80" />
-                    <div className="heatmap-surface h-20 w-28 rounded-md border border-brand-200/70" />
+                    <div className={index === 2 ? "spectrum-bars h-20 w-28 rounded-md border border-brand-200/70" : "heatmap-surface h-20 w-28 rounded-md border border-brand-200/70"} />
                   </div>
                   <div className="absolute bottom-4 left-4 h-2 w-24 rounded-full bg-brand-500/40" />
+                  {index === 0 ? <div className="absolute right-8 top-7 h-8 w-8 rounded border border-brand-300 bg-white/80" /> : null}
+                  {index === 1 ? <div className="absolute right-8 top-7 h-8 w-12 rounded border border-brand-300 bg-white/80" /> : null}
                 </div>
                 <div className="p-7">
                   <div className="flex h-12 w-12 items-center justify-center rounded-md bg-brand-50 text-brand-600">

@@ -5,6 +5,13 @@ import { productComposition } from "@/data/home";
 import { iconMap } from "@/lib/icons";
 
 export function ProductComposition() {
+  const visualStyles = [
+    "scanner-grid",
+    "bg-gradient-to-r from-brand-100 to-white",
+    "spectrum-bars",
+    "heatmap-surface"
+  ];
+
   return (
     <section className="bg-white px-4 py-16 md:px-8">
       <div className="mx-auto max-w-7xl">
@@ -21,7 +28,7 @@ export function ProductComposition() {
                 <Card className="h-full p-6">
                   <div className="mb-4 h-20 rounded-md border border-brand-100 bg-gradient-to-br from-brand-50 to-white p-3">
                     <div className="flex h-full items-center justify-between gap-2">
-                      <div className="h-8 w-10 rounded border border-brand-200 bg-white" />
+                      <div className={`h-8 w-10 rounded border border-brand-200 ${visualStyles[index]} bg-white`} />
                       <div className="h-5 w-14 rounded-full bg-brand-200/70" />
                     </div>
                   </div>

@@ -12,7 +12,7 @@ export function WhyChoose() {
         />
         <div className="mt-10 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
           {whyChoose.map((item) => (
-            <div className="rounded-card border border-line bg-white p-6 shadow-card" key={item.title}>
+            <div className="rounded-card border border-line bg-white p-6 shadow-card transition hover:-translate-y-1 hover:border-brand-200 hover:shadow-soft" key={item.title}>
               <div className="text-3xl font-bold text-brand-600">{item.metric}</div>
               <h3 className="mt-4 text-lg font-bold tracking-normal text-ink-900">{item.title}</h3>
               <p className="mt-3 text-sm leading-7 text-ink-600">{item.description}</p>
