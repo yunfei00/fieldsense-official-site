@@ -1,9 +1,14 @@
 import type { LeadPayload, LeadResponse } from "@/types/lead";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "http://localhost:8000";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "";
+
+export function apiUrl(path: string) {
+  const normalizedPath = path.startsWith("/") ? path : `/${path}`;
+  return `${API_BASE_URL}${normalizedPath}`;
+}
 
 async function postLead(endpoint: string, payload: LeadPayload): Promise<LeadResponse> {
-  const response = await fetch(`${API_BASE_URL}${endpoint}`, {
+  const response = await fetch(apiUrl(endpoint), {
     method: "POST",
     headers: {
       "Content-Type": "application/json"

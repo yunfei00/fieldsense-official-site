@@ -71,6 +71,11 @@ python manage.py runserver
 NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
 ```
 
+说明：
+
+- 生产环境推荐 `NEXT_PUBLIC_API_BASE_URL` 留空，前端通过同域相对路径 `/api`（由 Nginx 代理到后端）。
+- 本地前后端分开运行时，可在 `frontend/.env.local` 使用 `http://localhost:8000`（该文件不提交 Git）。
+
 后端可配置：
 
 ```bash
