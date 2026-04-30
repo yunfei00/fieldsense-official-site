@@ -16,4 +16,5 @@ __pycache__/
 .idea/
 .env
 deploy/.env
+deploy/data/
 

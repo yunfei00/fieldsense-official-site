@@ -38,13 +38,39 @@ NEXT_PUBLIC_API_BASE_URL=http://localhost:8000
 cp deploy/.env.example deploy/.env
 ```
 
-然后按需编辑 `deploy/.env` 中的 `DJANGO_SECRET_KEY`、`DJANGO_DEBUG`、`DJANGO_ALLOWED_HOSTS`、`DJANGO_CORS_ALLOWED_ORIGINS`、`DJANGO_CSRF_TRUSTED_ORIGINS` 等。
+然后按需编辑 `deploy/.env` 中的 `DJANGO_SECRET_KEY`、`DJANGO_DEBUG`、`DJANGO_ALLOWED_HOSTS`、`DJANGO_CORS_ALLOWED_ORIGINS`、`DJANGO_CSRF_TRUSTED_ORIGINS`、`SQLITE_DB_PATH` 等。
+
+SQLite 持久化目录默认使用：
+
+- `deploy/data/backend/db.sqlite3`
 
 ## Docker 启动
 
 ```bash
 cd deploy
 docker compose up -d --build
+```
+
+仅重建后端并重启 Nginx：
+
+```bash
+cd deploy
+docker compose up -d --build backend
+docker compose restart nginx
+```
+
+执行数据库迁移：
+
+```bash
+cd deploy
+docker compose exec backend python manage.py migrate
+```
+
+创建管理员账号：
+
+```bash
+cd deploy
+docker compose exec backend python manage.py createsuperuser
 ```
 
 若构建阶段依赖下载失败（例如网络抖动），可执行以下命令后重建：
@@ -60,6 +86,11 @@ docker compose up -d --build
 - 前端：http://localhost:3000
 - 后端 Admin：http://localhost:8000/admin
 - API：http://localhost:8000/api/leads/demo-request/
+- 生产 Admin 示例：http://flycloudjia.xyz/admin/
+
+查看线索路径：
+
+- 进入 Admin 后选择：`线索管理 -> 线索`
 
 ## 启用 Nginx
 
@@ -69,4 +100,8 @@ docker compose --profile nginx up -d --build
 ```
 
 Nginx 会将 `/api/` 和 `/admin/` 转发到后端，其余请求转发到前端。
+
+生产环境建议：
+
+- 不要直接暴露后端 `8000` 端口（`ports`），建议仅保留 `expose: 8000`，并通过 Nginx 访问 `/admin/` 与 `/api/`。
 
