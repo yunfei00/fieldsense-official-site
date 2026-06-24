@@ -27,6 +27,14 @@ fieldsense-official-site/
 └── README.md
 ```
 
+## 文档
+
+- `docs/README.md`：文档入口和阅读顺序。
+- `docs/project-handoff.md`：当前进展、背景需求、架构设计、下一步开发需求和 AI 接手指引。
+- `docs/product-requirements.md`：产品需求说明。
+- `docs/technical-design.md`：技术设计说明。
+- `docs/deploy-guide.md`：部署和运维说明。
+
 ## 本地开发
 
 ### 前端
@@ -197,4 +205,3 @@ docker compose --profile nginx up -d --build
 - 增加邮件通知、CRM 对接和表单来源追踪
 - 增加更多产品详情、方案详情和下载中心
 - 增加站点地图、结构化数据和 SEO 专题页
-
